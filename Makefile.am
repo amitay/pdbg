@@ -9,13 +9,15 @@ DIST_SUBDIRS = libfdt
 
 GIT_SHA1 ?= `git --work-tree=$(top_srcdir) --git-dir=$(top_srcdir)/.git describe --always --long --dirty 2>/dev/null || echo unknown`
 
+fdt_tests = fdt_traverse_test
+
 libpdbg_tests = libpdbg_target_test \
 		libpdbg_probe_test1 \
 		libpdbg_probe_test2 \
 		libpdbg_probe_test3
 
 bin_PROGRAMS = pdbg
-check_PROGRAMS = $(libpdbg_tests) libpdbg_dtree_test \
+check_PROGRAMS = $(fdt_tests) $(libpdbg_tests) libpdbg_dtree_test \
 		libpdbg_p9_fapi_translation_test \
 		optcmd_test hexdump_test cronus_proxy \
 		libpdbg_prop_test
@@ -139,7 +141,7 @@ pdbg_LDADD = libpdbg.la libccan.a \
 
 pdbg_LDFLAGS = -Wl,--whole-archive,-lpdbg,--no-whole-archive
 
-lib_LTLIBRARIES = libpdbg.la
+lib_LTLIBRARIES = libpdbg.la libfdt-ext.la
 noinst_LTLIBRARIES = libcronus.la libsbefifo.la
 
 libcronus_la_SOURCES = \
@@ -211,6 +213,15 @@ endif
 
 include_HEADERS = libpdbg/libpdbg.h
 
+libfdt_ext_la_SOURCES = \
+	fdt/fdt_traverse.c \
+	fdt/fdt_traverse.h
+
+libfdt_ext_la_CFLAGS = -I$(top_srcdir)/libfdt -I$(top_srcdir)/fdt
+if BUILD_LIBFDT
+libfdt_ext_la_LIBADD = libfdt/libfdt.la
+endif
+
 noinst_LIBRARIES = libccan.a
 
 libccan_a_SOURCES = \
@@ -224,6 +235,10 @@ libccan_a_SOURCES = \
 	ccan/short_types/short_types.h \
 	ccan/str/str.c \
 	ccan/str/str.h
+
+fdt_traverse_test_SOURCES = fdt/fdt_traverse_test.c
+fdt_traverse_test_CFLAGS = -I$(top_srcdir)/fdt
+fdt_traverse_test_LDADD = libfdt-ext.la
 
 libpdbg_test_cflags = -I$(top_srcdir)/libpdbg -I$(top_srcdir)/libfdt
 libpdbg_test_ldflags = -Wl,--whole-archive,-lpdbg,--no-whole-archive
