@@ -1606,6 +1606,36 @@
 					};
 				};
 			};
+
+			nv0 {
+				compatible = "ibm,power9-nv";
+				index = < 0x00 >;
+			};
+
+			nv1 {
+				compatible = "ibm,power9-nv";
+				index = < 0x01 >;
+			};
+
+			nv2 {
+				compatible = "ibm,power9-nv";
+				index = < 0x02 >;
+			};
+
+			nv3 {
+				compatible = "ibm,power9-nv";
+				index = < 0x03 >;
+			};
+
+			nv4 {
+				compatible = "ibm,power9-nv";
+				index = < 0x04 >;
+			};
+
+			nv5 {
+				compatible = "ibm,power9-nv";
+				index = < 0x05 >;
+			};
 		};
 	};
 
@@ -3212,6 +3242,36 @@
 						};
 					};
 				};
+			};
+
+			nv0 {
+				compatible = "ibm,power9-nv";
+				index = < 0x00 >;
+			};
+
+			nv1 {
+				compatible = "ibm,power9-nv";
+				index = < 0x01 >;
+			};
+
+			nv2 {
+				compatible = "ibm,power9-nv";
+				index = < 0x02 >;
+			};
+
+			nv3 {
+				compatible = "ibm,power9-nv";
+				index = < 0x03 >;
+			};
+
+			nv4 {
+				compatible = "ibm,power9-nv";
+				index = < 0x04 >;
+			};
+
+			nv5 {
+				compatible = "ibm,power9-nv";
+				index = < 0x05 >;
 			};
 		};
 	};
