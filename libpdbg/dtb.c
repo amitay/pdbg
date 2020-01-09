@@ -388,3 +388,8 @@ struct pdbg_dtb *pdbg_default_dtb(void *system_fdt)
 done:
 	return dtb;
 }
+
+void *pdbg_system_fdt(void)
+{
+	return pdbg_dtb.system;
+}
