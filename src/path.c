@@ -295,6 +295,16 @@ bool path_target_parse(const char **arg, int arg_count)
 	int i, n;
 
 	for (i=0; i<arg_count; i++) {
+		if (arg[i][0] == '/') {
+			struct pdbg_target *target;
+
+			target = pdbg_target_from_path(NULL, arg[i]);
+			if (target) {
+				path_target_add(target);
+				continue;
+			}
+		}
+
 		n = path_pattern_split(arg[i], pats);
 		if (n <= 0)
 			return false;
