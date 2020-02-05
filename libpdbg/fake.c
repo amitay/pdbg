@@ -90,8 +90,8 @@ DECLARE_HW_UNIT(fake_thread);
 __attribute__((constructor))
 static void register_fake(void)
 {
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &fake_fsi_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &fake_pib_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &fake_core_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &fake_thread_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_FAKE, &fake_fsi_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_FAKE, &fake_pib_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_FAKE, &fake_core_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_FAKE, &fake_thread_hw_unit);
 }
