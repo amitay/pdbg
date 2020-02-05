@@ -219,7 +219,7 @@ DECLARE_HW_UNIT(cronus_sbefifo);
 __attribute__((constructor))
 static void register_cronus(void)
 {
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &cronus_pib_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &cronus_fsi_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &cronus_sbefifo_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_CRONUS, &cronus_pib_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_CRONUS, &cronus_fsi_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_CRONUS, &cronus_sbefifo_hw_unit);
 }
