@@ -343,6 +343,15 @@ static struct chiplet sbefifo_chiplet = {
 };
 DECLARE_HW_UNIT(sbefifo_chiplet);
 
+static struct core sbefifo_core = {
+	.target = {
+		.name = "SBE FIFO Chip-op based Core",
+		.compatible = "ibm,sbefifo-core",
+		.class = "core",
+	},
+};
+DECLARE_HW_UNIT(sbefifo_core);
+
 static struct sbefifo kernel_sbefifo = {
 	.target = {
 		.name =	"Kernel based FSI SBE FIFO",
@@ -362,6 +371,7 @@ static void register_sbefifo(void)
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_chipop_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pib_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_chiplet_hw_unit);
+	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_core_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_mem_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pba_hw_unit);
 }
