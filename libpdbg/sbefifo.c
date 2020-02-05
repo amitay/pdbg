@@ -448,10 +448,10 @@ static void register_sbefifo(void)
 {
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &kernel_sbefifo_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_chipop_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pib_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_chiplet_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_core_hw_unit);
-	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_thread_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_SBEFIFO, &sbefifo_pib_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_SBEFIFO, &sbefifo_chiplet_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_SBEFIFO, &sbefifo_core_hw_unit);
+	pdbg_hwunit_register(PDBG_BACKEND_SBEFIFO, &sbefifo_thread_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_mem_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pba_hw_unit);
 }
