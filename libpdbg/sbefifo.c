@@ -253,6 +253,65 @@ static int sbefifo_pib_write(struct pib *pib, uint64_t addr, uint64_t val)
 	return sbefifo_scom_put(sctx, addr, val);
 }
 
+static int sbefifo_thread_probe(struct pdbg_target *target)
+{
+	struct thread *thread = target_to_thread(target);
+	uint32_t tid;
+
+	assert(!pdbg_target_u32_property(target, "tid", &tid));
+	thread->id = tid;
+
+	return 0;
+}
+
+static void sbefifo_thread_release(struct pdbg_target *target)
+{
+}
+
+static int sbefifo_thread_op(struct thread *thread, uint32_t oper)
+{
+	struct pdbg_target *core = pdbg_target_require_parent("core", &thread->target);
+	struct sbefifo *sbefifo = target_to_sbefifo(
+		pdbg_target_require_parent("sbefifo", &thread->target));
+	struct sbefifo_context *sctx = sbefifo->get_sbefifo_context(sbefifo);
+	uint8_t mode = 0;
+
+	/* Enforce special-wakeup for thread stop and sreset */
+	if ((oper & 0xf) == SBEFIFO_INSN_OP_STOP ||
+	    (oper & 0xf) == SBEFIFO_INSN_OP_SRESET)
+		mode = 0x2;
+
+	return sbefifo_control_insn(sctx,
+				    pdbg_target_index(core),
+				    thread->id,
+				    oper,
+				    mode);
+}
+static int sbefifo_thread_start(struct thread *thread)
+{
+	return sbefifo_thread_op(thread, SBEFIFO_INSN_OP_START);
+}
+
+static int sbefifo_thread_stop(struct thread *thread)
+{
+	return sbefifo_thread_op(thread, SBEFIFO_INSN_OP_STOP);
+}
+
+static int sbefifo_thread_step(struct thread *thread, int count)
+{
+	int i, rc;
+
+	for (i = 0; i < count; i++)
+		rc |= sbefifo_thread_op(thread, SBEFIFO_INSN_OP_STEP);
+
+	return rc;
+}
+
+static int sbefifo_thread_sreset(struct thread *thread)
+{
+	return sbefifo_thread_op(thread, SBEFIFO_INSN_OP_SRESET);
+}
+
 static struct sbefifo_context *sbefifo_op_get_context(struct sbefifo *sbefifo)
 {
 	return sbefifo->sf_ctx;
@@ -352,6 +411,21 @@ static struct core sbefifo_core = {
 };
 DECLARE_HW_UNIT(sbefifo_core);
 
+static struct thread sbefifo_thread = {
+	.target = {
+		.name = "SBE FFIO Chip-op based Thread",
+		.compatible = "ibm,sbefifo-thread",
+		.class = "thread",
+		.probe = sbefifo_thread_probe,
+		.release = sbefifo_thread_release,
+	},
+	.start = sbefifo_thread_start,
+	.stop = sbefifo_thread_stop,
+	.step = sbefifo_thread_step,
+	.sreset = sbefifo_thread_sreset,
+};
+DECLARE_HW_UNIT(sbefifo_thread);
+
 static struct sbefifo kernel_sbefifo = {
 	.target = {
 		.name =	"Kernel based FSI SBE FIFO",
@@ -372,6 +446,7 @@ static void register_sbefifo(void)
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pib_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_chiplet_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_core_hw_unit);
+	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_thread_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_mem_hw_unit);
 	pdbg_hwunit_register(PDBG_DEFAULT_BACKEND, &sbefifo_pba_hw_unit);
 }
