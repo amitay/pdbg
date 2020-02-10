@@ -608,6 +608,16 @@ struct pauc p9_pauc = {
 };
 DECLARE_HW_UNIT(p9_pauc);
 
+struct capp p9_capp = {
+        .target = {
+                .name = "POWER9 capp",
+                .compatible = "ibm,power9-capp",
+                .class = "capp",
+		.translate = p9_unknown_translation,
+        },
+};
+DECLARE_HW_UNIT(p9_capp);
+
 __attribute__((constructor))
 static void register_p9_fapi_targets(void)
 {
@@ -635,4 +645,5 @@ static void register_p9_fapi_targets(void)
 	pdbg_hwunit_register(&p9_iohs_hw_unit);
 	pdbg_hwunit_register(&p9_fc_hw_unit);
 	pdbg_hwunit_register(&p9_pauc_hw_unit);
+	pdbg_hwunit_register(&p9_capp_hw_unit);
 }
