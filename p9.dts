@@ -267,19 +267,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@20000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x20 >;
+						reg = < 0x00 0x20000000 0xfffff >;
 
-						chiplet@20000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x00 >;
+							reg = < 0x00 0x20000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x20 >;
-							reg = < 0x00 0x20000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -317,13 +317,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@21000000 {
+					chiplet@21000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x21 >;
+						reg = < 0x00 0x21000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x01 >;
+							reg = < 0x00 0x21000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x21 >;
-							reg = < 0x00 0x21000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -363,19 +371,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@22000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x22 >;
+						reg = < 0x00 0x22000000 0xfffff >;
 
-						chiplet@22000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x02 >;
+							reg = < 0x00 0x22000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x22 >;
-							reg = < 0x00 0x22000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -413,13 +421,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@23000000 {
+					chiplet@23000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x23 >;
+						reg = < 0x00 0x23000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x03 >;
+							reg = < 0x00 0x23000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x23 >;
-							reg = < 0x00 0x23000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -475,19 +491,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@24000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x24 >;
+						reg = < 0x00 0x24000000 0xfffff >;
 
-						chiplet@24000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x04 >;
+							reg = < 0x00 0x24000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x24 >;
-							reg = < 0x00 0x24000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -525,13 +541,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@25000000 {
+					chiplet@25000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x25 >;
+						reg = < 0x00 0x25000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x05 >;
+							reg = < 0x00 0x25000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x25 >;
-							reg = < 0x00 0x25000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -571,19 +595,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@26000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x26 >;
+						reg = < 0x00 0x26000000 0xfffff >;
 
-						chiplet@26000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x06 >;
+							reg = < 0x00 0x26000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x26 >;
-							reg = < 0x00 0x26000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -621,13 +645,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@27000000 {
+					chiplet@27000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x27 >;
+						reg = < 0x00 0x27000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x07 >;
+							reg = < 0x00 0x27000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x27 >;
-							reg = < 0x00 0x27000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -683,19 +715,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x12000000 0xffffff >;
+					chiplet@28000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x28 >;
+						reg = < 0x00 0x28000000 0xfffff >;
 
-						chiplet@28000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x08 >;
+							reg = < 0x00 0x28000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x28 >;
-							reg = < 0x00 0x28000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -733,13 +765,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@29000000 {
+					chiplet@29000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x29 >;
+						reg = < 0x00 0x29000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x09 >;
+							reg = < 0x00 0x29000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x29 >;
-							reg = < 0x00 0x29000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -779,19 +819,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x12000000 0xffffff >;
+					chiplet@2a000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2a >;
+						reg = < 0x00 0x2a000000 0xfffff >;
 
-						chiplet@2a000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0a >;
+							reg = < 0x00 0x2a000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2a >;
-							reg = < 0x00 0x2a000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -829,13 +869,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2b000000 {
+					chiplet@2b000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2b >;
+						reg = < 0x00 0x2b000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0b >;
+							reg = < 0x00 0x2b000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2b >;
-							reg = < 0x00 0x2b000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -891,19 +939,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x13000000 0xffffff >;
+					chiplet@2c000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2c >;
+						reg = < 0x00 0x2c000000 0xfffff >;
 
-						chiplet@2c000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0c >;
+							reg = < 0x00 0x2c000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2c >;
-							reg = < 0x00 0x2c000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -941,13 +989,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2d000000 {
+					chiplet@2d000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2d >;
+						reg = < 0x00 0x2d000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0d >;
+							reg = < 0x00 0x2d000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2d >;
-							reg = < 0x00 0x2d000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -987,19 +1043,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x13000000 0xffffff >;
+					chiplet@2e000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2e >;
+						reg = < 0x00 0x2e000000 0xfffff >;
 
-						chiplet@2e000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0e >;
+							reg = < 0x00 0x2e000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2e >;
-							reg = < 0x00 0x2e000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1037,13 +1093,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2f000000 {
+					chiplet@2f000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2f >;
+						reg = < 0x00 0x2f000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0f >;
+							reg = < 0x00 0x2f000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2f >;
-							reg = < 0x00 0x2f000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1099,19 +1163,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x14000000 0xffffff >;
+					chiplet@30000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x30 >;
+						reg = < 0x00 0x30000000 0xfffff >;
 
-						chiplet@30000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x10 >;
+							reg = < 0x00 0x30000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x30 >;
-							reg = < 0x00 0x30000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1149,13 +1213,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@31000000 {
+					chiplet@31000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x31 >;
+						reg = < 0x00 0x31000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x11 >;
+							reg = < 0x00 0x31000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x31 >;
-							reg = < 0x00 0x31000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1195,19 +1267,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x14000000 0xffffff >;
+					chiplet@32000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x32 >;
+						reg = < 0x00 0x32000000 0xfffff >;
 
-						chiplet@32000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x12 >;
+							reg = < 0x00 0x32000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x32 >;
-							reg = < 0x00 0x32000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1245,13 +1317,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@33000000 {
+					chiplet@33000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x33 >;
+						reg = < 0x00 0x33000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x13 >;
+							reg = < 0x00 0x33000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x33 >;
-							reg = < 0x00 0x33000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1307,19 +1387,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x15000000 0xffffff >;
+					chiplet@34000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x34 >;
+						reg = < 0x00 0x34000000 0xfffff >;
 
-						chiplet@34000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x14 >;
+							reg = < 0x00 0x34000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x34 >;
-							reg = < 0x00 0x34000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1357,13 +1437,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@35000000 {
+					chiplet@35000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x35 >;
+						reg = < 0x00 0x35000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x15 >;
+							reg = < 0x00 0x35000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x35 >;
-							reg = < 0x00 0x35000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1403,19 +1491,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x15000000 0xffffff >;
+					chiplet@36000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x36 >;
+						reg = < 0x00 0x36000000 0xfffff >;
 
-						chiplet@36000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x16 >;
+							reg = < 0x00 0x36000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x36 >;
-							reg = < 0x00 0x36000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1453,13 +1541,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@37000000 {
+					chiplet@37000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x37 >;
+						reg = < 0x00 0x37000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x17 >;
+							reg = < 0x00 0x37000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x37 >;
-							reg = < 0x00 0x37000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1768,19 +1864,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@20000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x20 >;
+						reg = < 0x00 0x20000000 0xfffff >;
 
-						chiplet@20000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x00 >;
+							reg = < 0x00 0x20000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x20 >;
-							reg = < 0x00 0x20000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1818,13 +1914,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@21000000 {
+					chiplet@21000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x21 >;
+						reg = < 0x00 0x21000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x01 >;
+							reg = < 0x00 0x21000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x21 >;
-							reg = < 0x00 0x21000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1864,19 +1968,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@22000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x22 >;
+						reg = < 0x00 0x22000000 0xfffff >;
 
-						chiplet@22000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x02 >;
+							reg = < 0x00 0x22000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x22 >;
-							reg = < 0x00 0x22000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1914,13 +2018,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@23000000 {
+					chiplet@23000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x23 >;
+						reg = < 0x00 0x23000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x03 >;
+							reg = < 0x00 0x23000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x23 >;
-							reg = < 0x00 0x23000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -1976,19 +2088,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@24000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x24 >;
+						reg = < 0x00 0x24000000 0xfffff >;
 
-						chiplet@24000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x04 >;
+							reg = < 0x00 0x24000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x24 >;
-							reg = < 0x00 0x24000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2026,13 +2138,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@25000000 {
+					chiplet@25000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x25 >;
+						reg = < 0x00 0x25000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x05 >;
+							reg = < 0x00 0x25000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x25 >;
-							reg = < 0x00 0x25000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2072,19 +2192,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x10000000 0xffffff >;
+					chiplet@26000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x26 >;
+						reg = < 0x00 0x26000000 0xfffff >;
 
-						chiplet@26000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x06 >;
+							reg = < 0x00 0x26000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x26 >;
-							reg = < 0x00 0x26000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2122,13 +2242,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@27000000 {
+					chiplet@27000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x27 >;
+						reg = < 0x00 0x27000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x07 >;
+							reg = < 0x00 0x27000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x27 >;
-							reg = < 0x00 0x27000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2184,19 +2312,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x12000000 0xffffff >;
+					chiplet@28000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x28 >;
+						reg = < 0x00 0x28000000 0xfffff >;
 
-						chiplet@28000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x08 >;
+							reg = < 0x00 0x28000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x28 >;
-							reg = < 0x00 0x28000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2234,13 +2362,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@29000000 {
+					chiplet@29000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x29 >;
+						reg = < 0x00 0x29000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x09 >;
+							reg = < 0x00 0x29000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x29 >;
-							reg = < 0x00 0x29000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2280,19 +2416,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x12000000 0xffffff >;
+					chiplet@2a000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2a >;
+						reg = < 0x00 0x2a000000 0xfffff >;
 
-						chiplet@2a000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0a >;
+							reg = < 0x00 0x2a000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2a >;
-							reg = < 0x00 0x2a000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2330,13 +2466,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2b000000 {
+					chiplet@2b000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2b >;
+						reg = < 0x00 0x2b000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0b >;
+							reg = < 0x00 0x2b000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2b >;
-							reg = < 0x00 0x2b000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2392,19 +2536,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x13000000 0xffffff >;
+					chiplet@2c000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2c >;
+						reg = < 0x00 0x2c000000 0xfffff >;
 
-						chiplet@2c000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0c >;
+							reg = < 0x00 0x2c000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2c >;
-							reg = < 0x00 0x2c000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2442,13 +2586,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2d000000 {
+					chiplet@2d000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2d >;
+						reg = < 0x00 0x2d000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0d >;
+							reg = < 0x00 0x2d000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2d >;
-							reg = < 0x00 0x2d000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2488,19 +2640,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x13000000 0xffffff >;
+					chiplet@2e000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2e >;
+						reg = < 0x00 0x2e000000 0xfffff >;
 
-						chiplet@2e000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0e >;
+							reg = < 0x00 0x2e000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2e >;
-							reg = < 0x00 0x2e000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2538,13 +2690,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@2f000000 {
+					chiplet@2f000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x2f >;
+						reg = < 0x00 0x2f000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x0f >;
+							reg = < 0x00 0x2f000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x2f >;
-							reg = < 0x00 0x2f000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2600,19 +2760,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x14000000 0xffffff >;
+					chiplet@30000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x30 >;
+						reg = < 0x00 0x30000000 0xfffff >;
 
-						chiplet@30000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x10 >;
+							reg = < 0x00 0x30000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x30 >;
-							reg = < 0x00 0x30000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2650,13 +2810,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@31000000 {
+					chiplet@31000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x31 >;
+						reg = < 0x00 0x31000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x11 >;
+							reg = < 0x00 0x31000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x31 >;
-							reg = < 0x00 0x31000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2696,19 +2864,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x14000000 0xffffff >;
+					chiplet@32000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x32 >;
+						reg = < 0x00 0x32000000 0xfffff >;
 
-						chiplet@32000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x12 >;
+							reg = < 0x00 0x32000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x32 >;
-							reg = < 0x00 0x32000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2746,13 +2914,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@33000000 {
+					chiplet@33000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x33 >;
+						reg = < 0x00 0x33000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x13 >;
+							reg = < 0x00 0x33000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x33 >;
-							reg = < 0x00 0x33000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2808,19 +2984,19 @@
 					#address-cells = < 0x02 >;
 					#size-cells = < 0x01 >;
 
-					ex@0 {
-						compatible = "ibm,power9-ex";
-						index = < 0x00 >;
-						reg = < 0x00 0x15000000 0xffffff >;
+					chiplet@34000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x34 >;
+						reg = < 0x00 0x34000000 0xfffff >;
 
-						chiplet@34000000 {
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x14 >;
+							reg = < 0x00 0x34000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x34 >;
-							reg = < 0x00 0x34000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2858,13 +3034,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@35000000 {
+					chiplet@35000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x35 >;
+						reg = < 0x00 0x35000000 0xfffff >;
+
+						ex@0 {
+							compatible = "ibm,power9-ex";
+							index = < 0x15 >;
+							reg = < 0x00 0x35000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x35 >;
-							reg = < 0x00 0x35000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2904,19 +3088,19 @@
 						};
 					};
 
-					ex@1 {
-						compatible = "ibm,power9-ex";
-						index = < 0x01 >;
-						reg = < 0x00 0x15000000 0xffffff >;
+					chiplet@36000000 {
 						#address-cells = < 0x02 >;
 						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x36 >;
+						reg = < 0x00 0x36000000 0xfffff >;
 
-						chiplet@36000000 {
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x16 >;
+							reg = < 0x00 0x36000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x36 >;
-							reg = < 0x00 0x36000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
@@ -2954,13 +3138,21 @@
 								};
 							};
 						};
+					};
 
-						chiplet@37000000 {
+					chiplet@37000000 {
+						#address-cells = < 0x02 >;
+						#size-cells = < 0x01 >;
+						compatible = "ibm,power9-chiplet";
+						index = < 0x37 >;
+						reg = < 0x00 0x37000000 0xfffff >;
+
+						ex@1 {
+							compatible = "ibm,power9-ex";
+							index = < 0x17 >;
+							reg = < 0x00 0x37000000 0xffffff >;
 							#address-cells = < 0x02 >;
 							#size-cells = < 0x01 >;
-							compatible = "ibm,power9-chiplet";
-							index = < 0x37 >;
-							reg = < 0x00 0x37000000 0xfffff >;
 
 							core@0 {
 								#address-cells = < 0x01 >;
