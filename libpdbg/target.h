@@ -60,6 +60,7 @@ struct pdbg_mfile {
 	int fd;
 	ssize_t len;
 	void *fdt;
+	bool readonly;
 };
 
 struct pdbg_dtb {
