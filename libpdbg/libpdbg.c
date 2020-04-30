@@ -170,6 +170,32 @@ struct pdbg_target *__pdbg_next_child_target(struct pdbg_target *parent, struct 
 	return NULL;
 }
 
+static int _pdbg_traverse(struct pdbg_target *parent, pdbg_traverse_callback_fn func, void *priv)
+{
+	struct pdbg_target *target;
+	int ret;
+
+	ret = func(parent, priv);
+	if (ret)
+		return ret;
+
+	pdbg_for_each_child_target(parent, target) {
+		ret = _pdbg_traverse(target, func, priv);
+		if (ret)
+			return ret;
+	}
+
+	return 0;
+}
+
+int pdbg_traverse(struct pdbg_target *parent, pdbg_traverse_callback_fn func, void *priv)
+{
+	if (!parent)
+		parent = pdbg_target_root();
+
+	return _pdbg_traverse(parent, func,  priv);
+}
+
 enum pdbg_target_status pdbg_target_status(struct pdbg_target *target)
 {
 	return target->status;
